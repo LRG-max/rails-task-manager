@@ -23,8 +23,11 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task.update(task_params)
-    redirect_to task_path(@task)
+    if @task.update(task_params)
+      redirect_to tasks_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

@@ -14,7 +14,7 @@
       <% end %>
 </p>
 <div class="mt-4 d-flex justify-content-between">
-      <%= link_to "⬅ Retour", tasks_path, class: "btn btn-outline-secondary" %>
+      <%= link_to "⬅ Retour", root_path, class: "btn btn-outline-secondary" %>
       <div>
         <%= link_to "✏ Modifier", edit_task_path(@task), class: "btn btn-primary me-2" %>
         <%= link_to "🗑 Supprimer", task_path(@task), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer cette tâche ?" }, class: "btn btn-danger" %>
