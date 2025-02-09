@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="card shadow-sm p-4">
+< <h2 class="mb-3">
+      <i class="fa-solid fa-thumbtack text-primary"></i> <%= @task.title %>
+    </h2>
+<p class="text-muted"><i class="fa-solid fa-align-left"></i> <strong>Détails :</strong> <%= @task.details.present? ? @task.details : "Aucun détail ajouté" %></p>
+<p>
+   <i class="fa-solid fa-check-circle"></i>
+      <strong>Statut :</strong>
+      <% if @task.completed %>
+        <span class="badge bg-success">Complétée</span>
+      <% else %>
+        <span class="badge bg-warning text-dark">En cours</span>
+      <% end %>
+</p>
+<div class="mt-4 d-flex justify-content-between">
+      <%= link_to "⬅ Retour", tasks_path, class: "btn btn-outline-secondary" %>
+      <div>
+        <%= link_to "✏ Modifier", edit_task_path(@task), class: "btn btn-primary me-2" %>
+        <%= link_to "🗑 Supprimer", task_path(@task), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer cette tâche ?" }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div >
+
+</div>
